@@ -1,16 +1,10 @@
 import React from "react";
-
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { title: "testing" };
-  }
-  render() {
-    return <h1>{this.state.title}</h1>;
-  }
-}
-// let App = () => {
-//   return <h1>testing ok</h1>;
-// };
+let App = () => {
+  return (
+    <section style="padding:1rem;color:red;background-color:yellow">
+      testing ok..
+    </section>
+  );
+};
 
 export default App;
