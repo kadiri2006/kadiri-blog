@@ -1,4 +1,5 @@
 import ReactDOM from "react-dom";
-let el = "react js";
-ReactDOM.render(el, document.getElementById("root"));
-
+let App = () => {
+  return <h1>testing</h1>;
+};
+ReactDOM.render(<App />, document.getElementById("root"));
