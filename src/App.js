@@ -1,5 +1,5 @@
-import react from "react";
+import React from "react";
 let App = () => {
-  return <h1>testing</h1>;
+  return <h1>testing ok</h1>;
 };
 export default App;
