@@ -2,7 +2,7 @@ import React from "react";
 let App = () => {
   return (
     <section
-      style={{ padding: "1rem", color: "red", background-color: "yellow" }}
+      style={{ padding: "1rem", color: "red", backgroundColor: "yellow" }}
     >
       testing ok..
     </section>
