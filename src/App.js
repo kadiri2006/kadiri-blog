@@ -1,12 +1,7 @@
 import React from "react";
+import "./assets/css/style.css";
 let App = () => {
-  return (
-    <section
-      style={{ padding: "1rem", color: "red", backgroundColor: "yellow" }}
-    >
-      testing ok..
-    </section>
-  );
+  return <section className="box">testing ok..</section>;
 };
 
 export default App;
