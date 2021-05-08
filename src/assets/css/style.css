@@ -1,5 +1,23 @@
 .box {
-    padding: 1rem; 
-    color: red; 
-    background-color: yellow
+  padding: 3rem;
+  background-color: blanchedalmond;
+  width: 50%;
+  height: 10rem;
+}
+.btn {
+  display: flex;
+  width: 100px;
+  height: 2rem;
+  padding-left: 200px;
+  background-color: blue;
+
+  margin: 5em;
+}
+
+.image {
+  display: flex;
+
+  width: 200px;
+  height: 200px;
+  padding-left: 10rem;
 }
