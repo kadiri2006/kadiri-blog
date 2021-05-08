@@ -1,42 +1,30 @@
-import React from "react";
-import "./assets/css/style.css";
-// let App = () => {
-//   return <div className="box">testing ok..</div>;
-// };
+import React, { Component } from "react";
+import Images from "./components/images";
 
-class App extends React.Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { display: false };
+    this.state = { posi: false, textApp: "this is my title" };
+    console.log("app cons");
   }
+  componentDidUpdate() {
+    console.log("app did update");
+  }
+
   clickHandler = () => {
-    this.setState({ display: !this.state.display });
+    this.setState({ posi: !this.state.posi });
   };
+
   render() {
+    console.log("app rende");
     return (
       <div>
-        <div className="box">
-          <h1>iam testing</h1>
+        <h1> {this.state.textApp}</h1>
+        <div>
+          <button onClick={this.clickHandler}>click here</button>
         </div>
-        <div className="btn">
-          <button type="button" onClick={this.clickHandler}>
-            button
-          </button>
-        </div>
-        {this.state.display ? (
-          <img
-            className="image"
-            src="https://images.unsplash.com/photo-1593642634524-b40b5baae6bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1489&q=80"
-          />
-        ) : null}
+        {this.state.posi ? <Images /> : null}
       </div>
     );
   }
 }
-
-export default App;
-
-//  <img
-//   className="image"
-//   src="https://images.unsplash.com/photo-1593642634524-b40b5baae6bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1489&q=80"
-// />
