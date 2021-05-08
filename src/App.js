@@ -8,11 +8,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { display: false };
-    this.clickHandler = this.clickHandler.bind(this);
   }
-  clickHandler() {
+  clickHandler = () => {
     this.setState({ display: !this.state.display });
-  }
+  };
   render() {
     return (
       <div>
