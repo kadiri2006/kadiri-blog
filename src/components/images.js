@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class Images extends Component {
   constructor(props) {
     super(props);
-    this.state = { calu: null };
+    this.state = { calu:  };
   }
 
   componentWillUnmount() {
