@@ -1,30 +1,33 @@
-import React, { Component } from "react";
-import Images from "./components/images";
+import React, { useEffect, useRef, useState } from "react";
+import Images from "./components/Images";
+export default function App() {
+  const [stat, setstat] = useState(false);
+  const testd = useRef(false);
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { posi: false, textApp: "this is my title" };
-    console.log("app cons");
-  }
-  componentDidUpdate() {
-    console.log("app did update");
-  }
+  useEffect(() => {
+    console.log("App mount");
+  }, []);
 
-  clickHandler = () => {
-    this.setState({ posi: !this.state.posi });
+  useEffect(() => {
+    if (testd.current) {
+      console.log("App updated");
+    } else {
+      testd.current = true;
+    }
+  }, [stat]);
+
+  let clickHandler = () => {
+    setstat(!stat);
   };
 
-  render() {
-    console.log("app rende");
-    return (
+  return (
+    <div>
+      {console.log("App render")}
+      <h1>hello iam kadiir</h1>
       <div>
-        <h1> {this.state.textApp}</h1>
-        <div>
-          <button onClick={this.clickHandler}>click here</button>
-        </div>
-        {this.state.posi ? <Images /> : null}
+        <button onClick={clickHandler}>click me</button>
       </div>
-    );
-  }
+      {stat ? <Images /> : null}
+    </div>
+  );
 }
