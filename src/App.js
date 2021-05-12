@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Images from "./components/Images";
+import style from "./components/style.css"
 export default function App() {
   const [stat, setstat] = useState(false);
   const testd = useRef(false);
@@ -23,9 +24,9 @@ export default function App() {
   return (
     <div>
       {console.log("App render")}
-      <h1>hello iam kadiir</h1>
+      <h1 className="heading">Collection of Images</h1>
       <div>
-        <button onClick={clickHandler}>click me</button>
+        <button onClick={clickHandler} className="btn">click me</button>
       </div>
       {stat ? <Images /> : null}
     </div>
