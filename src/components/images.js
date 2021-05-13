@@ -8,6 +8,7 @@ export default function Images() {
     "https://images.unsplash.com/photo-1617932631696-f36237bedf05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80",
   ]);
   const [urlAdd, seturlAdd] = useState(null);
+  const [enterValue, setenterValue] = useState("");
 
   function ShowImages() {
     return photos.map((img) => {
@@ -16,38 +17,32 @@ export default function Images() {
   }
 
   useEffect(() => {
-    //console.log("Images mounted");
-
-    let my = setInterval(() => {
-      //console.log("hi");
-    }, 1000);
+    let my = setInterval(() => {}, 1000);
 
     return () => {
       clearInterval(my);
-      //console.log("Image unmount");
     };
   });
 
   let imageAdd = () => {
+    setenterValue("");
+
     setphotos([...urlAdd]);
   };
 
-  let onChangeForm = (e) => {
-    seturlAdd([...photos, e.target.value]);
+  let handleChange = (x) => {
+    seturlAdd([...photos, x.target.value]);
+    setenterValue(x.target.value);
   };
 
   return (
     <div>
-      //{console.log()}
       <ShowImages />
       <div className="ib">
-        <input  type="text" onChange={onChangeForm} />
-        <button  onClick={imageAdd}>
-          add url to images
-        </button>
+        <input type="text" onChange={handleChange} value={enterValue} />
+        <button onClick={imageAdd}>add url to images</button>
       </div>
     </div>
   );
 }
-
 
