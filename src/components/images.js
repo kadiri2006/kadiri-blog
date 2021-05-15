@@ -1,7 +1,4 @@
-import { findByLabelText } from "@testing-library/dom";
-import { React, useEffect, useState } from "react";
-import style from "./style.css";
-
+import { React, useState } from "react";
 export default function Images() {
   const [photos, setphotos] = useState([
     "https://images.unsplash.com/photo-1511684344724-cda927f1ba0e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
@@ -11,14 +8,15 @@ export default function Images() {
   const [urlAdd, seturlAdd] = useState(photos);
   const [enterValue, setenterValue] = useState("");
   const [mouseE, setmouseE] = useState("");
-  const [deleteValue, setdeleteValue] = useState(true);
+
   const [obindex, setobindex] = useState("");
+
   function ShowImages() {
     return photos.map((img, index) => {
       return (
         <div
-           onMouseLeave={handleonMouseLeave}
-        style={{
+          onMouseLeave={handleonMouseLeave}
+          style={{
             display: "flex",
             inlineSize: "fitContent",
             position: "relative",
@@ -55,7 +53,6 @@ export default function Images() {
   }
 
   let handleonMouseLeave = () => {
-    setdeleteValue(true);
     setobindex("");
   };
 
@@ -67,7 +64,7 @@ export default function Images() {
 
   let handleMouseEnter = (index) => {
     setmouseE(index);
-    setdeleteValue(false);
+
     setobindex(index);
   };
 
